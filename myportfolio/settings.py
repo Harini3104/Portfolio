@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,9 +25,8 @@ SECRET_KEY = 'django-insecure-f!i)88#k!-%i8u38+1331mbf=2!yx7l@n0l2ru-xop^l&b!0zy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = ['  HariniM.pythonanywhere.com']
+CSRF_TRUSTED_ORIGINS = ['https://HariniM.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
