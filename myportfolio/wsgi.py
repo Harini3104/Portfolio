@@ -8,9 +8,16 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 """
 
 import os
+import sys
 
-from django.core.wsgi import get_wsgi_application
+# 1) Add your project path
+project_path = '/home/yourusername/Portfolio'
+if project_path not in sys.path:
+    sys.path.append(project_path)
 
+# 2) Point to your Django settings
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myportfolio.settings')
 
+# 3) WSGI app
+from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
