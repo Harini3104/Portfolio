@@ -1,0 +1,9 @@
+{% if profile %}
+  <div>
+    <img src="{{ profile.photo.url }}" alt="{{ profile.name }}" width="200">
+    <h2>{{ profile.name }}</h2>
+    <p>{{ profile.bio }}</p>
+  </div>
+{% else %}
+  <p>No profile uploaded yet.</p>
+{% endif %}
