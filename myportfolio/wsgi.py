@@ -11,7 +11,7 @@ import os
 import sys
 
 # 1) Add your project path
-project_path = '/home/yourusername/Portfolio'
+project_path = '/home/HariniM/Portfolio'
 if project_path not in sys.path:
     sys.path.append(project_path)
 
