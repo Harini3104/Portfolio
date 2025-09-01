@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f!i)88#k!-%i8u38+1331mbf=2!yx7l@n0l2ru-xop^l&b!0zy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['  HariniM.pythonanywhere.com']
+ALLOWED_HOSTS = ['HariniM.pythonanywhere.com','harinim.pythonanywhere.com','127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://HariniM.pythonanywhere.com']
 # Application definition
 
