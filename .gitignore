@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.py.class
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Django stuff
+*.log
+db.sqlite3
+db.sqlite3-journal
+
+# Migrations (optional — keep if you want clean repo)
+*/migrations/__pycache__/
+*/migrations/*.py
+
+# Static & Media
+# Ignore only your personal image folder inside static
+main/static/image/
+
+# Ignore media folder if you add later
+/media/
+
+# VS Code / PyCharm / IDE
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
