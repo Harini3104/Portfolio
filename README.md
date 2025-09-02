@@ -19,16 +19,17 @@ Version Control: Git, GitHub
 
 📂 Project Structure
 Portfolio/
-│── main/               # Main app with templates & static files
-│── myportfolio/        # Django project settings
-│── templates/          # HTML templates (base, home, projects, etc.)
-│── static/             # CSS, images, JS
+│── main/ # Main app with templates & static files
+│── myportfolio/ # Django project settings
+│── templates/ # HTML templates (base, home, projects, etc.)
+│── static/ # CSS, images, JS
 │── manage.py
 │── requirements.txt
 
 ⚙**️ Setup & Installation**
 
 Clone the repository
+
 git clone https://github.com/Harini3104/Portfolio.git
 cd Portfolio
 
@@ -36,16 +37,20 @@ cd Portfolio
 **Create & activate virtual environment**
 
 python -m venv venv
+
 source venv/bin/activate   # Linux/Mac
+
 venv\Scripts\activate      # Windows
 
 **Install dependencies**
+
 pip install -r requirements.txt
 
 
 **Run migrations & start server** 
 
 python manage.py migrate
+
 python manage.py runserver
 
 
