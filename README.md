@@ -18,15 +18,15 @@ Deployment: PythonAnywhere
 Version Control: Git, GitHub
 
 📂 Project Structure
-'''
 Portfolio/
-│── main/ # Main app with templates & static files
-│── myportfolio/ # Django project settings
-│── templates/ # HTML templates (base, home, projects, etc.)
-│── static/ # CSS, images, JS
-│── manage.py
-│── requirements.txt
-'''
+├── main/ # Main app with templates & static files
+├── myportfolio/ # Django project settings
+├── templates/ # HTML templates (base, home, projects, etc.)
+├── static/ # CSS, images, JS
+├── manage.py
+└── requirements.txt
+
+
 ⚙**️ Setup & Installation**
 
 Clone the repository
