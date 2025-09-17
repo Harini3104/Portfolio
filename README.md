@@ -27,7 +27,14 @@ Portfolio/
 └── requirements.txt
 
 
-⚙**️ Setup & Installation**
+=======
+│── main/ # Main app with templates & static files
+│── myportfolio/ # Django project settings
+│── templates/ # HTML templates (base, home, projects, etc.)
+│── static/ # CSS, images, JS
+│── manage.py
+│── requirements.txt
+
 
 Clone the repository
 

@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f!i)88#k!-%i8u38+1331mbf=2!yx7l@n0l2ru-xop^l&b!0zy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['HariniM.pythonanywhere.com','harinim.pythonanywhere.com','127.0.0.1']
+ALLOWED_HOSTS = ['HariniM.pythonanywhere.com','harinim.pythonanywhere.com','127.0.0.1',"<EC2_PUBLIC_IP>", "<your-domain-if-any>"]
 CSRF_TRUSTED_ORIGINS = ['https://HariniM.pythonanywhere.com']
 # Application definition
 
@@ -118,7 +118,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']   # optional global static
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 # Media files
