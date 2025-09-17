@@ -4,6 +4,7 @@ __pycache__/
 *.pyo
 *.pyd
 *.py.class
+*.pyc
 
 # Virtual environment
 .venv/
@@ -21,9 +22,9 @@ db.sqlite3-journal
 */migrations/*.py
 
 # Static & Media
-# Keep your personal image folder tracked for AWS
-# main/static/image/   <-- removed from ignore
-/media/              # still ignore media uploads
+# Keep images tracked (don’t ignore)
+# main/static/image/
+/media/
 
 # VS Code / PyCharm / IDE
 .vscode/
