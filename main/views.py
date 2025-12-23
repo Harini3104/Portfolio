@@ -6,7 +6,7 @@ from .models import Project, Education,Internship,Certification
 from .forms import ContactForm
 from django.shortcuts import render, redirect
 from .forms import ContactForm
-
+from .models import Resume
 def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
@@ -18,8 +18,6 @@ def contact(request):
     return render(request, "contact.html", {"form": form})
 
 
-def home(request):
-    return render(request, 'home.html')
 def projects(request):
     all_projects = Project.objects.all()
     return render(request, 'projects.html', {'projects': all_projects})
@@ -55,3 +53,6 @@ def Contact_view(request):
         return redirect("success")
 
     return render(request, "contact.html")
+def home(request):
+    resume = Resume.objects.last()
+    return render(request, 'home.html', {'resume': resume})

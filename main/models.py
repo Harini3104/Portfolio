@@ -51,3 +51,10 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.email}"
+class Resume(models.Model):
+    file = models.FileField(upload_to='resumes/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Resume uploaded on {self.uploaded_at.strftime('%Y-%m-%d %H:%M:%S')}"
+

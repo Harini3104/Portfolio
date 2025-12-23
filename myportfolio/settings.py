@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f!i)88#k!-%i8u38+1331mbf=2!yx7l@n0l2ru-xop^l&b!0zy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['HariniM.pythonanywhere.com','harinim.pythonanywhere.com','127.0.0.1',"<EC2_PUBLIC_IP>", "<your-domain-if-any>"]
+ALLOWED_HOSTS = ['HariniM.pythonanywhere.com','harinim.pythonanywhere.com','127.0.0.1',"13.201.31.49", "harinim.duckdns.org"]
 CSRF_TRUSTED_ORIGINS = ['https://HariniM.pythonanywhere.com']
 # Application definition
 
@@ -47,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+ 'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
 
@@ -114,9 +115,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
-
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']   # optional global static
+STATICFILES_DIRS = [BASE_DIR / "main" / "static"]  # optional global static
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # Default primary key field type

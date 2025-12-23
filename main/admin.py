@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile,Project, Education,Certification,Internship, Contact
+from .models import Profile,Project, Education,Certification,Internship, Contact,Resume
 admin.site.register(Project)
 class EducationAdmin(admin.ModelAdmin):
     list_display = ("degree", "institution", "year", "cgpa")
@@ -9,3 +9,4 @@ admin.site.register(Contact)
 admin.site.register(Education)
 admin.site.register(Certification)
 admin.site.register(Internship)
+admin.site.register(Resume)
