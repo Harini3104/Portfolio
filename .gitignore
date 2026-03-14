@@ -12,6 +12,34 @@ venv/
 ENV/
 env/
 
+# Django
+db.sqlite3
+staticfiles/
+
+# IDE
+.idea/
+.vscode/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.py.class
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
 # Django stuff
 *.log
 db.sqlite3
