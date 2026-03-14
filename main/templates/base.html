@@ -17,7 +17,7 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body style="
   background: linear-gradient(135deg, #141E30, #243B55);
@@ -41,7 +41,13 @@
           <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %}" href="{% url 'projects' %}">Projects</a></li>
           <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'education' %}active{% endif %}" href="{% url 'education' %}">Path of Knowledge</a></li>
           <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% static 'HARINIM_Resume.pdf' %}" target="_blank">Resume</a></li>
+          <li class="nav-item">
+          {% if resume %}
+            <a class="nav-link" href="{{ resume.file.url }}" target="_blank">Resume</a>
+          {% else %}
+              <a class="nav-link disabled" href="#">Resume</a>
+          {% endif %}
+          </li>
         </ul>
       </div>
     </div>
