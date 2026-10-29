@@ -3,34 +3,74 @@
 
 {% block content %}
 
-
 <!-- Hero Section -->
 <section class="hero mt-5 container">
   <div class="row align-items-center">
 
     <!-- Left side: text -->
     <div class="col-md-6">
-      <h1>Hi, I'm Harini</h1>
-      <p class="lead"> Python Developer | AWS Cloud Learner </p>
-      <div class="my-3">
-        <a href="https://www.linkedin.com/in/harinimk/" target="_blank" class="btn btn-outline-primary me-2">
-            <i class="bi bi-linkedin"></i> LinkedIn
-        </a>
-         <a href="https://github.com/Harini3104" target="_blank" class="btn btn-outline-dark github-btn">
-            <i class="bi bi-github"></i> GitHub
-         </a>
-      </div>
-      <a href="{% url 'projects' %}" class="btn btn-primary mt-3">View Projects</a>
+
+      {% if profile %}
+        <h1>Hi, I'm {{ profile.name }}</h1>
+
+        {% if profile.title %}
+          <p class="lead">{{ profile.title }}</p>
+        {% endif %}
+
+        <div class="my-3">
+
+          {% if profile.linkedin %}
+            <a href="{{ profile.linkedin }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-outline-primary me-2">
+              <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
+          {% endif %}
+
+          {% if profile.github %}
+            <a href="{{ profile.github }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-outline-light github-btn">
+              <i class="bi bi-github"></i> GitHub
+            </a>
+          {% endif %}
+
+        </div>
+
+      {% else %}
+        <h1>Hi, I'm Harini</h1>
+        <p class="lead">Python Developer | AWS Cloud Learner</p>
+      {% endif %}
+
+      <a href="{% url 'projects' %}" class="btn btn-primary mt-3">
+        View Projects
+      </a>
+
     </div>
 
     <!-- Right side: photo with bottom animation -->
     <div class="col-md-6 text-center">
-      <img src="{% static 'image/hari.jpg' %}"
-           alt="My Photo" width="220"
-           class="rounded"
-           data-aos="fade-up"
-           data-aos-duration="1200">
+
+      {% if profile and profile.photo %}
+        <img src="{{ profile.photo.url }}"
+             alt="{{ profile.name }}"
+             width="220"
+             class="rounded"
+             data-aos="fade-up"
+             data-aos-duration="1200">
+      {% else %}
+        <img src="{% static 'image/hari.jpg' %}"
+             alt="My Photo"
+             width="220"
+             class="rounded"
+             data-aos="fade-up"
+             data-aos-duration="1200">
+      {% endif %}
+
     </div>
+
   </div>
 </section>
 

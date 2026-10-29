@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f!i)88#k!-%i8u38+1331mbf=2!yx7l@n0l2ru-xop^l&b!0zy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['HariniM.pythonanywhere.com','harinim.pythonanywhere.com','127.0.0.1',"13.201.31.49", "harinim.duckdns.org"]
 CSRF_TRUSTED_ORIGINS = ['https://HariniM.pythonanywhere.com']
@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.context_processors.portfolio_data',
             ],
         },
     },
