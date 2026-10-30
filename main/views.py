@@ -18,14 +18,29 @@ from .forms import ContactForm
 def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
+
         if form.is_valid():
-            form.save()
+            contact_message = form.save()
+
+            full_message = (
+                f"Message from {contact_message.name} "
+                f"({contact_message.email}):\n\n"
+                f"{contact_message.message}"
+            )
+
+            send_mail(
+                subject="New Contact Form Submission",
+                message=full_message,
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[settings.EMAIL_HOST_USER],
+            )
+
             return redirect("contact")
+
     else:
         form = ContactForm()
 
     return render(request, "contact.html", {"form": form})
-
 
 def projects(request):
     all_projects = Project.objects.all()
@@ -43,31 +58,6 @@ def education_certifications(request):
         "internships": internships,
     })
 
-
-def Contact_view(request):
-    if request.method == "POST":
-        name = request.POST.get("name")
-        email = request.POST.get("email")
-        message = request.POST.get("message")
-
-        Contact.objects.create(
-            name=name,
-            email=email,
-            message=message
-        )
-
-        full_message = f"Message from {name} ({email}):\n\n{message}"
-
-        send_mail(
-            subject="New Contact Form Submission",
-            message=full_message,
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[settings.EMAIL_HOST_USER],
-        )
-
-        return redirect("success")
-
-    return render(request, "contact.html")
 
 
 def home(request):
